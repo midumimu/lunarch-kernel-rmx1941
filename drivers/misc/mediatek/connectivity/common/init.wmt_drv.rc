@@ -1,2 +1,6 @@
 on boot
     insmod /vendor/lib/modules/wmt_drv.ko
+
+on property:sys.boot_completed=1
+    setprop ro.boot.vendor.overlay.static false
+    setprop vendor.connsys.driver.ready yes
